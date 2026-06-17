@@ -3,10 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kira Luna Nichtawitz E-Portfolio</title>
+  <title>Kira Luna's E-Portfolio</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/png" href="images/globe-icon.png">
   <style>
     /* ── RESET & BASE ── */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -430,26 +431,7 @@
       line-height: 1.7;
     }
 
-    /* ── PORTFOLIO ── */
-    .portfolio-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 14px;
-    }
-    .portfolio-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-md);
-      padding: 1.4rem;
-      text-decoration: none;
-      display: block;
-      transition: border-color 0.25s, transform 0.2s, box-shadow 0.25s;
-    }
-    .portfolio-card:hover {
-      border-color: var(--blue-bright);
-      transform: translateY(-4px);
-      box-shadow: 0 8px 32px var(--border-glow);
-    }
+    /* ── PROJECT PORTFOLIO/PHOTO GALLERY ── */
     .portfolio-type {
       font-family: var(--mono);
       font-size: 10px;
@@ -469,15 +451,46 @@
       color: var(--text-sec);
       line-height: 1.6;
     }
-    .portfolio-placeholder {
-      background: var(--bg-card-alt);
-      border: 2px dashed var(--border);
-      border-radius: var(--radius-md);
-      padding: 2rem 1.4rem;
-      text-align: center;
-      color: var(--text-dim);
-      font-family: var(--mono);
-      font-size: 12px;
+    .project-gallery {
+      position: relative;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+    }
+    .gallery-image {
+      width: 100%;
+      display: block;
+      aspect-ratio: 16/9;
+      object-fit: cover;
+    }
+    .gallery-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      border: 1px solid var(--border);
+      background: rgba(7,14,26,.8);
+      color: var(--blue-mid);
+      cursor: pointer;
+      font-size: 18px;
+      z-index: 2;
+    }
+    .gallery-btn:hover {
+      border-color: var(--blue-bright);
+    }
+    .gallery-prev {
+      left: 12px;
+    }
+    .gallery-next {
+      right: 12px;
+    }
+    .gallery-caption {
+      padding: 14px 18px;
+      color: var(--text-sec);
+      font-size: 13px;
     }
 
     /* ── FOOTER ── */
@@ -707,8 +720,8 @@
           </div>
           <div class="job-date">May 2026 – Jul 2026</div>
           <ul class="job-bullets">
-            <li>Collaborated with a team to build a full-stack AI-powered web application using Django, React, and the Kraken cryptocurrency API. Designed and implemented a relational database schema, RESTful API endpoints, JWT authentication, and a live background data-polling engine.</li>
-            <li>Contributed to an autonomous ML trading engine (OpenClaw/Hermes) that reads market patterns and executes simulated trades with real-time portfolio tracking.</li>
+            <li>Collaborated with a team to build a full-stack machine learning-powered web application using Django, React, and the Kraken cryptocurrency API. Designed and implemented a relational database schema, RESTful API endpoints, JWT authentication, and a live background data-polling engine.</li>
+            <li>Implemented an autonomous ML trading engine backed by a LSTM neural network that reads market patterns and executes simulated trades with real-time portfolio tracking.</li>
           </ul>
         </div>
 
@@ -819,8 +832,8 @@
   <!-- ─────────────────────────────── INTERNSHIP REFLECTION ─────────────────────────────── -->
   <section id="internship">
     <div class="sec-label">04 — Internship Reflection</div>
-    <h2 class="section-title">My Time on the Ground</h2>
-    <p class="section-desc">What I built, learned, and how it changed me.</p>
+    <h2 class="section-title">Professional Growth</h2>
+    <p class="section-desc">Lessons I learned in a South Korean workplace.</p>
 
     <div class="card reveal" style="line-height: 2; color: var(--text-sec); font-size: 15px;">
 
@@ -856,33 +869,55 @@
     <div class="sec-label">05 — Work Portfolio</div>
     <h2 class="section-title">What I Built</h2>
     <p class="section-desc">
-      Work products, deliverables, and projects from my internship and coursework abroad.
+      Work products & pictures from my internship project abroad.
     </p>
 
-    <div class="portfolio-grid reveal">
+    <div class="card reveal" style="margin-bottom:16px;">
+      <div class="portfolio-type">💻 INTERNATIONAL SOFTWARE DEVELOPMENT PROJECT</div>
 
-      <!-- ✏️ EDIT: Replace href="#" with your actual file link. Add/remove cards as needed. -->
-      <a class="portfolio-card" href="#" target="_blank">
-        <div class="portfolio-type">📄 Report / Analysis</div>
-        <div class="portfolio-name">Work Product Title Here</div>
-        <div class="portfolio-desc">Brief description of what this is, what problem it solved, and the outcome. 1–2 sentences.</div>
-      </a>
+      <div class="portfolio-name" style="font-size:20px; margin-bottom:12px;">
+        AI-Powered Cryptocurrency Trading Simulator
+      </div>
 
-      <a class="portfolio-card" href="#" target="_blank">
-        <div class="portfolio-type">📊 Presentation</div>
-        <div class="portfolio-name">Slide Deck / Pitch Title</div>
-        <div class="portfolio-desc">Brief description of the context — who the audience was, what the deliverable achieved.</div>
-      </a>
+      <div class="portfolio-desc" style="font-size:14px; line-height:1.9;">
+        During my internship at GNC Solution in Seoul, I collaborated with an international development team to build a full-stack cryptocurrency trading simulation platform powered by machine learning. The application uses live market data from the Kraken cryptocurrency API and allows users to manually simulate trades or delegate investment decisions to an autonomous AI trading engine. On the backend, we developed a Django-based system with RESTful APIs, JWT authentication, relational database storage, and a live data polling service that retrieves market information every 30 seconds. The machine learning component utilizes TensorFlow and LSTM (Long Short-Term Memory) neural networks trained on historical cryptocurrency data to identify market patterns and execute simulated buy and sell decisions. The project provided hands-on experience with full-stack software engineering, machine learning workflows, API integration, collaborative development, and cross-cultural teamwork in a South Korean technology company.
+      </div>
 
-      <a class="portfolio-card" href="#" target="_blank">
-        <div class="portfolio-type">💻 Project / Code</div>
-        <div class="portfolio-name">Technical Work Product</div>
-        <div class="portfolio-desc">If you built something technical — a tool, a dashboard, a script — describe it briefly here.</div>
-      </a>
+      <hr class="line" />
 
-      <div class="portfolio-placeholder">
-        ✏️ Add more work products here.<br/>
-        Link to PDFs, Google Drive, Notion, GitHub, or Figma.
+      <div style="display:flex; flex-wrap:wrap; gap:8px;">
+        <span class="skill-pill blue">Python</span>
+        <span class="skill-pill blue">Django</span>
+        <span class="skill-pill blue">React</span>
+        <span class="skill-pill blue">TensorFlow</span>
+        <span class="skill-pill blue">Kraken API</span>
+        <span class="skill-pill">JWT Authentication</span>
+        <span class="skill-pill">REST APIs</span>
+        <span class="skill-pill">LSTM Networks</span>
+        <span class="skill-pill">Machine Learning</span>
+        <span class="skill-pill">International Collaboration</span>
+      </div>
+    </div>
+
+    <div class="project-gallery reveal">
+
+      <button class="gallery-btn gallery-prev" onclick="changeSlide(-1)">
+        ←
+      </button>
+
+      <img
+        id="galleryImage"
+        class="gallery-image"
+        src="images/workplace-00002.jpeg"
+        alt="UF interns with company CEO Yongchan Keum."
+      >
+
+      <button class="gallery-btn gallery-next" onclick="changeSlide(1)">
+        →
+      </button>
+
+      <div id="galleryCaption" class="gallery-caption">
+        UF interns with company CEO Yongchan Keum.
       </div>
 
     </div>
@@ -967,6 +1002,49 @@
       a.classList.toggle('active', a.getAttribute('href') === '#' + current);
     });
   });
+
+  // ── GALLERY ──
+  const galleryImages = [
+    {
+      src: "images/workplace-00002.jpeg",
+      caption: "UF interns with company CEO Yongchan Keum."
+      
+    },
+    {
+      src: "images/workplace-00007.jpeg",
+      caption: "Kira working on the web app project."
+    },
+    {
+      src: "images/workplace-00001.jpeg",
+      caption: "Lunch with company coworkers."
+    },
+    {
+      src: "images/Agentic-trader-app-screenshot.jpg",
+      caption: "Agentic Trader web app UI screenshot showing the trading dashboard."
+    },
+    {
+      src: "images/Agentic-trader-code-screenshot.jpg",
+      caption: "Screenshot of frontend code setup for web app."
+    }
+  ];
+
+  let currentSlide = 0;
+
+  function updateGallery() {
+    document.getElementById("galleryImage").src =
+      galleryImages[currentSlide].src;
+
+    document.getElementById("galleryCaption").textContent =
+      galleryImages[currentSlide].caption;
+  }
+
+  function changeSlide(direction) {
+    currentSlide =
+      (currentSlide + direction + galleryImages.length)
+      % galleryImages.length;
+
+    updateGallery();
+  }
 </script>
 </body>
 </html>
